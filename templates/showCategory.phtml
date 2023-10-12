@@ -1,0 +1,32 @@
+<?php require 'templates/header.phtml' ?>
+
+
+<div class="container-lg">
+        <div class="row-title">
+        <div class="col-md-12-title bg-primary d-flex justify-content-center p-3"> <h1>Categorias :</h1></div>
+        </div>
+    </div>
+    <div class="container">
+    <div class="row">
+        <?php foreach ($categorias as $t) : ?>
+            <div class="col-md-6 col-12">
+                <a href="verCategoria/<?php echo $t->id_categoria ?>" class="btn btn-primary categoria-nombre-grande"><?php echo $t->nombre_categoria ?></a>
+                
+                
+                <?php if ($_SESSION['rol'] == "admin") : ?>
+                
+                    <div class="d-flex justify-content-end">
+                    
+                        <a href="modificar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-dark me-2 btn-sm boton-categoria">Editar</button></a>
+                        <a href="eliminar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-danger btn-sm boton-categoria">Eliminar</button></a>
+                        <a href="agregar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-success btn-sm boton-categoria">Agregar</button></a>
+                    </div>
+
+                <?php endif; ?>
+
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<?php require 'templates/footer.phtml'; ?>

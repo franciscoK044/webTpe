@@ -1,0 +1,16 @@
+<?php
+
+    class viewHome{
+
+    //function viewProduct($productos, $cat){
+    function viewProduct($productos){
+        require_once './templates/header.phtml';
+        $count = count($productos);
+        require_once './templates/showProduct.phtml';
+    }
+
+
+    function showIndex(){
+        require_once './templates/index.phtml';
+    }
+}

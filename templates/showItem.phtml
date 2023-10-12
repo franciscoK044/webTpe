@@ -1,0 +1,11 @@
+<<ul class="list-group">
+    <?php foreach ($categ as $cat) { ?>
+        <li class="list-group-item">
+            <p>Producto: <?php echo $cat->nombre_producto ?></p>
+            <p>Precio: <?php echo $cat->precio ?></p>
+            <p>Modelo: <?php echo $cat->modelo ?></p>
+            <p>Categoria:<?php echo $cat->nombre_categoria ?></p>
+        </li>
+    <?php } ?>
+</ul>
+

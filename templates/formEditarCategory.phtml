@@ -1,0 +1,13 @@
+<!-- formulario de alta de tarea -->
+<form action="enviarFormEdit" method="POST" class="my-4">
+    <div class="row">
+        <div class="col-9">
+            <div class="form-group">
+            <input type="number" hidden name="id_categoria" value="<?php echo $id_categoria ?>">
+                <label>Título</label>
+                <input required name="nombre_categoria" type="text" class="form-control">
+            </div>
+        </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Modificar</button>
+</form>

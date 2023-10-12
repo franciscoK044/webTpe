@@ -1,0 +1,23 @@
+<?php
+
+class AuthView {
+    public function showLogin($error = null) {
+        require './templates/login.phtml';
+    }
+
+    public function showRegister($error = null){
+        require_once './templates/register.phtml';
+    }
+    public function verifySuccess(){
+        require_once './templates/verifySuccess.phtml';
+    }
+    public function viewCategoryAdmin($categ){
+        require_once './templates/showCategory.phtml';
+    }
+    public function viewCategoryUser($categ){
+        require_once './templates/showCategoryRolUser.phtml';
+    }
+    public function showError($error = null){
+        './templates/showError.phtml';
+    }
+}

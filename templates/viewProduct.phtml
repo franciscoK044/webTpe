@@ -1,0 +1,15 @@
+<div class="row">
+          <?php foreach($productos as $t){?>
+            <div class="col-sm-6">
+                <div class="card text-center" style="width: 18rem">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo($t->nombre_producto)?></h5>
+                        <p><?php echo($t->precio);?></p>
+                        <p>    <?php echo($t->modelo)?>;</p>
+                    </div>
+                </div>
+            </div>        <?php } ?>
+        </div>        
+    </div>
+    <?php
+    require_once 'templates/footer.phtml';?>
