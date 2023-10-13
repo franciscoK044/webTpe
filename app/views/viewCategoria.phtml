@@ -43,7 +43,9 @@ public function viewCategoryUser($categ){
             require_once './templates/header.phtml';
         require_once './templates/formCategory.phtml';
         }
-        public function mostrarFormEditCategory($id_categoria){
+        public function mostrarFormEditCategory($id_categoria, $categoria){
+            session_start();
+
             require_once './templates/header.phtml';
             require_once './templates/formEditarCategory.phtml';
             ?>

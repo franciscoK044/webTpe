@@ -70,7 +70,7 @@ $action = 'home';
         case 'agregar' :
             $controller = new categoriasController();
             $controller->addCategory();
-            $controller->viewForm($params[1]);
+           // $controller->viewForm($params[1]);
             break;
         case 'modificar' :
             $controller = new categoriasController();

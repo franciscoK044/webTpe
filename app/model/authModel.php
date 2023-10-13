@@ -12,10 +12,16 @@ class UserModel {
         $query->execute([$email]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    public function getUserByEmail($email) {
+        $query = $this->db->prepare('SELECT * FROM users WHERE email = ?');
+        $query->execute([$email]);
+    
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 
-    public function insertUser($email,$password, $rol){
-        $query = $this->db->prepare('INSERT INTO users(email,password,rol) VALUES (?,?,?)');
-        $query->execute([$email,$password,$rol]);
+    public function insertUser($email,$password){
+        $query = $this->db->prepare('INSERT INTO users(email,password) VALUES (?,?)');
+        $query->execute([$email,$password]);
     }
     public function getByRol($rol){
         $query = $this->db->prepare('SELECT * FROM users WHERE rol = ?');

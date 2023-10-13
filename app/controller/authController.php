@@ -24,37 +24,27 @@
         }
 
         public function verifyRegister() {
-            if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['rol'])) {
-                $userEmail = $_POST['email'];
-                $userPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
-                $rol = $_POST['rol'];
+            // Comprobar si el usuario ya existe en la base de datos
+            $userEmail = $_POST['email'];
+            $userPassword = $_POST['password'];
+          
+            
         
-                // Realiza la inserción del usuario en la base de datos (asegúrate de proteger contra SQL Injection)
-                $this->model->insertUser($userEmail, $userPassword, $rol);
-        
-                // Comprobar si el usuario existe en la base de datos
-                $user = $this->model->getByEmail($userEmail);
-
-                //verificar si el email ya esta en la db (hacer)
-                
-                if ($user) {
-                    session_start();
-                    $_SESSION["logueado"] = true;
-                    $_SESSION['id_user'] = $user->id_user;
-                    $_SESSION["email"] = $userEmail;
-                    $_SESSION["rol"] = $rol; // Almacena el rol en la sesión
-                    
-                    header('Location:' .BASE_URL. 'index'); 
-
-                } else {
-                    // Error: No se pudo obtener el usuario después del registro
-                    $this->view->showError("Error en el registro.");
-                }
+            if ($this->model->getByEmail($userEmail)) {
+                // El usuario ya existe, redirige al usuario a una página de inicio de sesión u muestra un mensaje de error
+                header("Location:" . BASE_URL . "login");
             } else {
-                // Campos incorrectos o faltantes
-                $this->view->showError("Datos incorrectos o faltantes.");
+                // El usuario no existe, realiza la inserción en la base de datos
+                $hashedPassword = password_hash($userPassword, PASSWORD_BCRYPT);
+                $this->model->insertUser($userEmail, $hashedPassword);
+                $this->auth();
+
             }
         }
+        
+        
+        
+
         
 
         public function auth(){

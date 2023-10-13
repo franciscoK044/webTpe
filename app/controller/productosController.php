@@ -14,6 +14,7 @@ require_once './app/views/viewHome.phtml';
             $this->model = new productosModel();
             //$this->categoriasModel = new categoriasModel();
             $this->view = new viewHome();
+            session_start();
         }
 
 

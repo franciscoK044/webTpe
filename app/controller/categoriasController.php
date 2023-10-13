@@ -16,6 +16,7 @@ require_once './app/helpers/auhtHelper.php';
             $this->view = new viewCategorias();
             $this->model2 = new productosModel();
             $this->auth = new AuthController();
+            
         }
 
         function ListCategory(){
@@ -54,7 +55,7 @@ require_once './app/helpers/auhtHelper.php';
             }
             $id = $this->model->insertCategory($nombre_categoria);
             if ($id){
-                header("Location:" . BASE_URL . "home");
+                header("Location:" . BASE_URL . "categorias");
             }
             else{
                 $this->view->mostrarError("error al insertar el usuario");
@@ -63,7 +64,8 @@ require_once './app/helpers/auhtHelper.php';
 
 
         function mostrarFormEditCategory($id){
-            $this->view->mostrarFormEditCategory($id);
+            $categoria = $this->model->getCategoryById($id);
+            $this->view->mostrarFormEditCategory($id, $categoria->nombre_categoria);
         }
 
 

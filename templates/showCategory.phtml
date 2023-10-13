@@ -1,32 +1,53 @@
 <?php require 'templates/header.phtml' ?>
 
-
-<div class="container-lg">
-        <div class="row-title">
-        <div class="col-md-12-title bg-primary d-flex justify-content-center p-3"> <h1>Categorias :</h1></div>
-        </div>
+<div class="containerCategorias">
+    <div class="containerH2Categorias">
+        <h2 class="h2Categorias">Categorias</h2>
     </div>
-    <div class="container">
-    <div class="row">
+    <div class="containerCards">
         <?php foreach ($categorias as $t) : ?>
-            <div class="col-md-6 col-12">
-                <a href="verCategoria/<?php echo $t->id_categoria ?>" class="btn btn-primary categoria-nombre-grande"><?php echo $t->nombre_categoria ?></a>
+            <div class="card">
+                    <a class="aCategoria" href="verCategoria/<?php echo $t->id_categoria ?>"><?php echo $t->nombre_categoria ?></a>
+            
+                    <?php if ($_SESSION['rol'] == "admin") : ?>
                 
+                <div class="containerBtnsCategoria">
                 
-                <?php if ($_SESSION['rol'] == "admin") : ?>
-                
-                    <div class="d-flex justify-content-end">
-                    
-                        <a href="modificar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-dark me-2 btn-sm boton-categoria">Editar</button></a>
-                        <a href="eliminar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-danger btn-sm boton-categoria">Eliminar</button></a>
-                        <a href="agregar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-success btn-sm boton-categoria">Agregar</button></a>
-                    </div>
+                    <a href="modificar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-dark me-2 btn-sm boton-categoria">Editar</button></a>
+                    <a href="eliminar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-danger btn-sm boton-categoria">Eliminar</button></a>
+                </div>
 
-                <?php endif; ?>
-
-            </div>
+            <?php endif; ?>
+            
+            
+                </div>
         <?php endforeach; ?>
+        </div>
+
+<div class="containerFormAgregarCategoria">
+
+<form class="formAgregarCategoria" action="agregar"  method="POST">
+    <div>
+        <h2>Agregar categoria</h2>
     </div>
+<div class="row inputFormAgregar">
+        <div class="col-9">
+            <div class="form-group">
+                <label>Nombre de la categoria:</label>
+                <input required name="nombre_categoria" type="text" class="form-control">
+            </div>
+        </div>
+
+    <button id="btnAgregarCategoria" type="submit" class="btn btn-primary mt-2">Agregar</button>
+
+</form>
+</div>
+        
+    </div>
+
+    
 </div>
 
-<?php require 'templates/footer.phtml'; ?>
+
+    
+

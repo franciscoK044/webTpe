@@ -40,10 +40,10 @@
         }
 
         function getCategoryById($id){
-            $query = $this->db->prepare('SELECT * FROM producto WHERE id_categoria = ?');
+            $query = $this->db->prepare('SELECT * FROM categoria WHERE id_categoria = ?');
             $query->execute([$id]);
             //tareas es un arreglo de tareas
-            $category = $query->fetchAll(PDO::FETCH_OBJ);
+            $category = $query->fetch(PDO::FETCH_OBJ);
     
             return $category;
         }
