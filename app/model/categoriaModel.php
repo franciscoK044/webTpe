@@ -46,6 +46,14 @@
             return $category;
         }
 
+        function getCategoryByNombre($nombre_categoria){
+            $query = $this->db->prepare('SELECT * FROM categoria WHERE nombre_categoria = ?');
+            $query->execute([$nombre_categoria]);
+            $category = $query->fetch(PDO::FETCH_OBJ);
+    
+            return $category;
+        }
+
         function insertCategory($nombre_categoria){
             $query = $this->db->prepare('INSERT INTO categoria (nombre_categoria) VALUES(?)');
             $query-> execute([$nombre_categoria]);

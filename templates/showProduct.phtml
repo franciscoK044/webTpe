@@ -1,19 +1,12 @@
-<?php require_once './templates/header.phtml';?>
-        <?php foreach($cat as $c){?>
-            <option value="<?php echo $c->id_categoria   ?>"> <?php echo $c->nombre_categoria    ?></option>
-<?php   }   ?>
-<div class="row">
-          <?php foreach($productos as $t){?>
-            <div class="col-sm-6">
-                <div class="card text-center" style="width: 18rem">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo($t->nombre_producto)?></h5>
-                        <p><?php echo($t->precio);?></p>
-                        <p>    <?php echo($t->modelo)?>;</p>
-                    </div>
-                </div>
-            </div>        <?php } ?>
-        </div>        
-    </div>
-    <?php
-    require_once 'templates/footer.phtml';?>
+<<ul class="list-group">
+
+        <li class="list-group-item">
+            <p>Producto: <?php echo $nombre_producto ?></p>
+            <p>Precio: $ <?php echo $precio ?></p>
+            <p>Modelo: <?php echo $modelo ?></p>
+            <p>Categoria: <?php echo $categoria ?> </p>
+        </li>
+    
+        <?php require_once './templates/productosbutton.phtml';?>
+
+</ul>

@@ -50,11 +50,32 @@ $action = 'home';
             $controller = new productosController();
             $controller->showIndex();
             break;
-     /*   
+        
         case 'productos':
             $controller= new productosController();
             $controller->showProducts();
-*/
+            break;
+            
+        case 'verProducto':
+            $controller= new productosController();
+            $controller->viewProductoID($params[1]);
+            break;
+            
+        case 'agregarProducto' :
+            $controller = new productosController();
+            $controller->addProducto();
+            break;
+
+        case 'eliminarProducto' :
+            $controller = new productosController();
+            $controller->removeProducto($params[1]);
+            break;
+            
+        case 'modificarProducto' :
+            $controller = new productosController();
+            $controller->mostrarFormEditProducto($params[1]);
+            break;
+
         case 'categorias' :
             $controller = new categoriasController();
             $controller->ListCategory();

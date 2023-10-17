@@ -1,16 +1,29 @@
 <?php
-
     class viewHome{
 
     //function viewProduct($productos, $cat){
-    function viewProduct($productos){
+    function viewProducts($productos, $categorias){
         require_once './templates/header.phtml';
-        $count = count($productos);
-        require_once './templates/showProduct.phtml';
+        require_once './templates/showProducts.phtml';
     }
 
+    function viewProductoID($id_producto, $nombre_producto, $precio, $modelo, $categoria){
+        require_once './templates/header.phtml';
+        require_once './templates/showProduct.phtml';
+        ?>
+        <?php
+    }
+
+    public function mostrarFormEditProducto($id_producto, $nombre_producto, $precio, $modelo, $categoria){
+        session_start();
+        require_once './templates/header.phtml';
+        require_once './templates/formEditarProducto.phtml';
+       
+    }
 
     function showIndex(){
         require_once './templates/index.phtml';
     }
+
+
 }
