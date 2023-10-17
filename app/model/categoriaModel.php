@@ -10,7 +10,6 @@
             
             $query = $this->db->prepare('SELECT * FROM categoria');
             $query->execute();
-            //tareas es un arreglo de tareas
             $category = $query->fetchAll(PDO::FETCH_OBJ);
     
             return $category;
@@ -42,7 +41,6 @@
         function getCategoryById($id){
             $query = $this->db->prepare('SELECT * FROM categoria WHERE id_categoria = ?');
             $query->execute([$id]);
-            //tareas es un arreglo de tareas
             $category = $query->fetch(PDO::FETCH_OBJ);
     
             return $category;
@@ -54,7 +52,7 @@
             return $this->db->lastInsertId();
         }
 
-        function actualizarCategoria($id_categoria, $nombre_categoria){
+        function updateCategoria($id_categoria, $nombre_categoria){
             $consulta = $this->db->prepare('UPDATE categoria SET nombre_categoria = ? WHERE id_categoria = ?');
             $consulta->execute([$nombre_categoria,$id_categoria]);
         }

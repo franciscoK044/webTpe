@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Gabarito&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Tilt+Neon&display=swap');
 
-body{
+body {
     background: linear-gradient(to bottom, #3498db, #e74c3c);
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Gabarito', sans-serif;
+    backdrop-filter: blur(1000px); /* Ajusta el valor según tu preferencia */
 }
 
 
@@ -260,7 +261,7 @@ span{
     justify-content: center;
     align-items: center;
     padding: 3%;
-    padding-bottom: 0;
+    padding-bottom: 80px;
     width: 90%;
     margin: 58px 68px;
     margin-top: 3%;

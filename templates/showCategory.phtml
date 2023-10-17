@@ -2,28 +2,27 @@
 
 <div class="containerCategorias">
     <div class="containerH2Categorias">
-        <h2 class="h2Categorias">Categorias</h2>
+        <h2 class="h2Categorias">Categorías</h2>
     </div>
     <div class="containerCards">
         <?php foreach ($categorias as $t) : ?>
             <div class="card">
-                    <a class="aCategoria" href="verCategoria/<?php echo $t->id_categoria ?>"><?php echo $t->nombre_categoria ?></a>
+                <a class="aCategoria" href="verCategoria/<?php echo $t->id_categoria ?>"><?php echo $t->nombre_categoria ?></a>
             
-                    <?php if ($_SESSION['rol'] == "admin") : ?>
-                
-                <div class="containerBtnsCategoria">
-                
-                    <a href="modificar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-dark me-2 btn-sm boton-categoria">Editar</button></a>
-                    <a href="eliminar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-danger btn-sm boton-categoria">Eliminar</button></a>
-                </div>
-
-            <?php endif; ?>
-            
-            
-                </div>
+                <?php if (isset($_SESSION['email'])) : ?>
+                    
+                    <div class="containerBtnsCategoria">
+                        <a href="modificar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-dark me-2 btn-sm boton-categoria">Editar</button></a>
+                        <a href="eliminar/<?php echo $t->id_categoria ?>"><button type="button" class="btn btn-danger btn-sm boton-categoria">Eliminar</button></a>
+                    </div>
+                <?php endif; ?>
+            </div>
         <?php endforeach; ?>
-        </div>
+    </div>
+</div>
 
+
+<?php if (isset($_SESSION['email'])) : ?>
 <div class="containerFormAgregarCategoria">
 
 <form class="formAgregarCategoria" action="agregar"  method="POST">
@@ -47,7 +46,7 @@
 
     
 </div>
-
+<?php endif; ?>
 
     
 

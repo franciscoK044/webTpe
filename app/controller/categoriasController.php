@@ -6,22 +6,22 @@ require_once './app/helpers/auhtHelper.php';
 
     class categoriasController{
         private $model;
-        private $model2;
+        //private $model2;
         private $view;
         private $auth;
 
         public function __construct(){
-
+            //AuthHelper::verify();
             $this->model = new categoriasModel();
             $this->view = new viewCategorias();
-            $this->model2 = new productosModel();
+            //$this->model2 = new productosModel();
             $this->auth = new AuthController();
             
         }
 
         function ListCategory(){
-
-            $this->auth->checkLoggedIn();
+            //$this->auth->checkLoggedIn();
+            session_start();
             $category = $this->model->getCategory();
             $this->view->showCategorys($category);
         }
@@ -33,9 +33,7 @@ require_once './app/helpers/auhtHelper.php';
         }
 
 
-        function getProduct(){
-            $products = $this->model2->getProduct();
-        }
+       
 
 
 
@@ -78,7 +76,7 @@ require_once './app/helpers/auhtHelper.php';
             }
             else{
                 // Llama a la función actualizarCategoria con el nombre de la categoría y el ID
-                $this->model->actualizarCategoria($id,$nombre_categoria);
+                $this->model->updateCategoria($id,$nombre_categoria);
                 header("Location:" . BASE_URL . "categorias");
             }
         }

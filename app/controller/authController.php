@@ -25,6 +25,7 @@
 
         public function verifyRegister() {
             // Comprobar si el usuario ya existe en la base de datos
+            
             $userEmail = $_POST['email'];
             $userPassword = $_POST['password'];
           
@@ -41,8 +42,26 @@
 
             }
         }
-        
-        
+
+        //public function agregarProducto(){
+        //        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //            // Recopila los datos del formulario
+        //            $nombre = $_POST['nombre'];
+        //            $precio = $_POST['precio'];
+        //            $id_categoria = $_POST['categoria']; // El valor seleccionado en el select es el id_categoria
+
+
+        //            if (!empty($nombre) || !empty($precio) || ($id_categoria)){
+        //                $this->model->insertProducto($nombre,$precio,$id_categoria);
+         //                echo("hoal");
+         //           }
+                    
+         //       }
+        //}
+
+
+
+
         
 
         
