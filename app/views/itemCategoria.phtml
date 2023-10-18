@@ -1,0 +1,15 @@
+<?php
+        class viewCategorias{
+        function viewCategory($categ){
+            require_once './templates/header.phtml';
+            ?>
+            <ul class="list-group">;
+                <?php foreach($categ as $t){
+                    ?>
+                    <li class="list-group-item " aria-current="true"><a href="<?php echo $t->id_categoria?>"><?php echo($t->nombre_categoria)?></a></li>      
+                <?php } ?>
+            </div>        
+        </div>
+            <?php
+        }
+    }

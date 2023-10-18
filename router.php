@@ -86,7 +86,7 @@ $action = 'home';
             $controller->ListCategory();
             break;
         case 'verCategoria' :
-            $controller = new categoriasController();
+            $controller = new productosController();
             $controller->viewCategory($params[1]);
             break;
         case 'eliminar' :
@@ -96,7 +96,6 @@ $action = 'home';
         case 'agregar' :
             $controller = new categoriasController();
             $controller->addCategory();
-           // $controller->viewForm($params[1]);
             break;
         case 'modificar' :
             $controller = new categoriasController();

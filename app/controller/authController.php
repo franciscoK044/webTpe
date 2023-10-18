@@ -43,29 +43,6 @@
             }
         }
 
-        //public function agregarProducto(){
-        //        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        //            // Recopila los datos del formulario
-        //            $nombre = $_POST['nombre'];
-        //            $precio = $_POST['precio'];
-        //            $id_categoria = $_POST['categoria']; // El valor seleccionado en el select es el id_categoria
-
-
-        //            if (!empty($nombre) || !empty($precio) || ($id_categoria)){
-        //                $this->model->insertProducto($nombre,$precio,$id_categoria);
-         //                echo("hoal");
-         //           }
-                    
-         //       }
-        //}
-
-
-
-
-        
-
-        
-
         public function auth(){
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $email = $_POST['email'];
@@ -88,7 +65,7 @@
                         $_SESSION["logueado"] = true;
                         $_SESSION['id_user'] = $user->id_user;
                         $_SESSION["email"] = $email;
-                        $_SESSION["rol"] = $user->rol; // Almacena el rol en la sesión
+                        $_SESSION["rol"] = $user->rol; 
                         
                             header('Location:' .BASE_URL. 'index'); 
 

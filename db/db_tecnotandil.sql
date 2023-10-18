@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2023 a las 22:14:44
+-- Tiempo de generación: 18-10-2023 a las 02:30:01
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `based_tpe`
+-- Base de datos: `db_tecnotandil`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +41,7 @@ INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`) VALUES
 (22, 'Aire y Climatizacion'),
 (23, 'Heladeras'),
 (24, 'Lavarropas'),
-(43, 'actualizado');
+(46, 'Holi');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,8 @@ INSERT INTO `producto` (`id_producto`, `nombre_producto`, `precio`, `modelo`, `i
 (19, 'Bgh Aires Climat', 199000, 'Bh6 Ultimat Prime', 22, ''),
 (20, 'Heladera gafa', 330000, 'vG5 gafa', 23, ''),
 (21, 'Lavarropas automatico Whirlpool', 500000, 'WWB11B Whirlpool', 24, ''),
-(22, 'Sony Music Disq', 189000, 'Disque Prime-Hto', 21, '');
+(22, 'Sony Music Disq', 189000, 'Disque Prime-Hto', 21, ''),
+(27, 'juega la seleccion', 111111, '2222', 23, '');
 
 -- --------------------------------------------------------
 
@@ -94,10 +95,12 @@ INSERT INTO `users` (`id_user`, `user`, `email`, `password`, `rol`) VALUES
 (111, '', 'aaaa@gmail.com', '$2y$10$NYDRKoH/reQAdHXMGeD9.uSpNfkm/2dm6ieo.L23N2zGcqSTW5Ivu', 'usuario'),
 (112, '', '1qwqsa@gmail.com', '$2y$10$tXFiSc76bHgbRae3AkhSxuA/wfiEP/Emnw65RxUyFukVP07b0HuGa', 'usuario'),
 (113, '', 'ASDADA@Gmail.com', '$2y$10$4BQexwvJANTb.BsrbpYSnecRBWqQcmE8heUlPCOFMw77i3f/.ZYQa', 'usuario'),
-(114, '', '', '$2y$10$eiPhEZVHHwbGW0d/OmnnneHl0hsd0PoBF0JHDBfk1kfNnk89Ge9Iq', 'usuario'),
 (115, '', '123123@gmail.com', '$2y$10$ox5VRwC.3.0H2OAjWxiEZu5AwtdEUY1yMHQpsqv1jZ1VnbkCXPSx.', 'usuario'),
 (116, '', 'pruebaaa@gmail.com', '$2y$10$yWWBAk50tyuXbtDGtv60W.Xjsv8MHqNFdyumENf0Kf6TX0iupzy/C', ''),
-(117, '', 'hernan@gmail.com', '$2y$10$QRd.tizt3dRvyWJKwP2QauttDA0.PBqQ5dnADIq/Tc4EO7glyUaee', '');
+(117, '', 'hernan@gmail.com', '$2y$10$QRd.tizt3dRvyWJKwP2QauttDA0.PBqQ5dnADIq/Tc4EO7glyUaee', ''),
+(118, '', 'tecnoT@gmail.com', '$2y$10$ZbD3uvbhViE83zhMfXawJe4/WzTsDKzt4C4VVubMaRztko3saD0lG', ''),
+(119, '', 'juan@gmail.com', '$2y$10$I.Mk2pQwXhnv4FMymT3KJevceruhpPQQLZ6h1fKtKz26Kw0hKR5wu', ''),
+(120, '', 'chicho@gmail.com', '$2y$10$ozh.2.//6F5C8I9d9Q1/buuButXbocMcuI6QKalGzvgKffpqRjT1a', '');
 
 --
 -- Índices para tablas volcadas
@@ -130,19 +133,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- Restricciones para tablas volcadas

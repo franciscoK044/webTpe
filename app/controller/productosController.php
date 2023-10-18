@@ -27,6 +27,11 @@ class productosController {
         $this->view->viewProducts($products,$categoria);
     }
 
+    function viewCategory($id){                             
+        $products = $this->categoriasModel->getProductWithCategory($id);
+        $this->view->viewItem($products);
+    }
+
 
     function viewProductoID($id_producto) {
             session_start();
@@ -58,9 +63,6 @@ class productosController {
     function mostrarFormEditProductos($id_producto) {
         AuthHelper::verify();
         $producto = $this->model->getProductWithCategory($id_producto);
-        
-      //  var_dump($producto);
-        echo($producto->nombre_producto);
         $categorias = $this->categoriasModel->getCategory();
         $this->view->mostrarFormEditProducto($producto->id_producto, $producto->nombre_producto, $categorias);
 

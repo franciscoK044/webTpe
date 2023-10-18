@@ -37,7 +37,7 @@
             $sentenciaCategoria->execute(array($id));
 
         }
-
+        
         function getCategoryById($id){
             $query = $this->db->prepare('SELECT * FROM categoria WHERE id_categoria = ?');
             $query->execute([$id]);
