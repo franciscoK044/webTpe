@@ -21,12 +21,18 @@ require_once './app/helpers/auhtHelper.php';
 
         function ListCategory(){
             //$this->auth->checkLoggedIn();
-            session_start();
+            if (!isset($_SESSION['email']))
+                session_start();
             $category = $this->model->getCategory();
             $this->view->showCategorys($category);
         }
 
-
+        function mostrarFormEditCategory($id_categoria){
+            
+            $categoria = $this->model->getCategoryById($id_categoria);
+            $this->view->mostrarFormEditCategory($id_categoria, $categoria->nombre_categoria);
+        }
+            
         function viewCategory($id){                             //es ver producto(cambiar)
             $products = $this->model->getProductWithCategory($id);
             $this->view->viewItem($products);
@@ -60,12 +66,12 @@ require_once './app/helpers/auhtHelper.php';
             }
         }
 
-
+/*
         function mostrarFormEditCategory($id){
             $categoria = $this->model->getCategoryById($id);
             $this->view->mostrarFormEditCategory($id, $categoria->nombre_categoria);
         }
-
+*/
 
         function modifyCategory(){
             $id = $_POST['id_categoria'];

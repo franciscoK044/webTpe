@@ -1,9 +1,37 @@
 <?php 
     class viewProducts{
-    function viewItem($categ){
+
+        function __construct(){
+        }
+        function viewProducts($products,$categorias){
+            require_once './templates/header.phtml';
+            
+            require_once './templates/showProducts.phtml';
+        }
+    
+        function viewProductoID($id_producto, $nombre_producto, $precio, $modelo, $categoria){
+            require_once './templates/header.phtml';
+            require_once './templates/showProduct.phtml';
+        }
+    
+        public function mostrarFormEditProducto($id,$nombre_producto,$categorias){
+            require_once './templates/header.phtml';
+            require_once './templates/formEditarProducto.phtml';
+        }
+    
+        function showIndex(){
+            session_start();
+            require_once './templates/index.phtml';
+        }
+
+        function viewItem($categ){
             require_once './templates/header.phtml';
             require_once './templates/showItem.phtml';
-            ?>
-            <?php
+        }
+
+        public function mostrarError($error){
+            require 'templates/header.phtml';
+            require 'templates/showError.phtml';
+
         }
     }

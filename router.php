@@ -73,7 +73,12 @@ $action = 'home';
             
         case 'modificarProducto' :
             $controller = new productosController();
-            $controller->mostrarFormEditProducto($params[1]);
+            $controller->mostrarFormEditProductos($params[1]);
+            break;
+        
+        case 'enviarFormEditProduct' :
+            $controller = new productosController();
+            $controller-> modifyProducto();
             break;
 
         case 'categorias' :
@@ -97,7 +102,7 @@ $action = 'home';
             $controller = new categoriasController();
             $controller->mostrarFormEditCategory($params[1]);
             break;
-        case 'enviarFormEdit' :
+        case 'enviarFormEditCategory' :
             $controller = new categoriasController();
             $controller->modifyCategory();
             break;

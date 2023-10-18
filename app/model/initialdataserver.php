@@ -40,17 +40,16 @@ class InitialDataSeeder {
         $sql = "
             -- Datos iniciales de categorías
             INSERT INTO categorias (nombre_categoria) VALUES
-            ('Electrónica'),
-            ('Ropa'),
-            ('Alimentación');
+            ('Heladeras'),
+            ('Aires'),
+            ('Tv');
     
             -- Datos iniciales de productos
             INSERT INTO productos (nombre_producto, precio, modelo, id_categoria) VALUES
-            ('Teléfono', 399.99, 'Modelo 1', 1),
-            ('Camiseta', 19.99, 'Modelo 2', 2),
-            ('Manzanas', 2.99, 'Modelo 3', 3);
+            ('Heladera', Model gh23, '452000', 1),
+            ('Aire bgh', Model tr40, '245000, 2),
+            ('Tv', Sony U2, '35000', 3);
     
-            -- Puedes agregar más datos iniciales aquí
         ";
     
         try {

@@ -4,7 +4,7 @@
         private $db;
 
         public function __construct(){
-            $this->db = new PDO('mysql:host=localhost;dbname=based_tpe;charset=utf8','root','');
+            $this->db = new PDO('mysql:host=localhost;dbname=db_tecnotandil;charset=utf8','root','');
         }   
         function getCategory(){
             

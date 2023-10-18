@@ -6,7 +6,7 @@
             <p>Modelo: <?php echo $modelo ?></p>
             <p>Categoria: <?php echo $categoria ?> </p>
         </li>
-    
-        <?php require_once './templates/productosbutton.phtml';?>
-
+        <?php if (isset($_SESSION['email'])) : ?>
+            <?php require_once './templates/productosbutton.phtml';?>
+        <?php endif ?>
 </ul>
